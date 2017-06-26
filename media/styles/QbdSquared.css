@@ -1,0 +1,48 @@
+.QScontainer{
+    width: 100%;
+    float: left;
+    padding-top: 4em;
+    overflow: hidden;
+}
+.p{
+    perspective: 1000; 
+}
+.QbdSquared{
+    width: 50%;
+    height: 50%;
+    float: left;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    animation: rotate infinite 5s linear;
+}
+.cube{
+    width: 2em;
+    margin: .5em auto;
+    transform-style: preserve-3d;
+    background: rgba(156, 2, 2, .7);
+}
+.side{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background: inherit;
+    border: 1px solid rgba(38, 38, 38, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 2em;
+}
+.front { transform: translateZ(1em);}
+.top { transform: rotateX(90deg) translateZ(1em);}
+.right { transform: rotateY(90deg) translateZ(1em);}
+.left { transform: rotateY(-90deg) translateZ(1em);}
+.bottom { transform: rotateX(-90deg) translateZ(1em);}
+.back { transform: rotateY(-180deg) translateZ(1em);}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(-10deg) rotateY(360deg) rotateZ(0deg);
+    }
+}
